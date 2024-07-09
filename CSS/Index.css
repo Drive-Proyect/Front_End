@@ -1,0 +1,32 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+}
+
+.content {
+    margin-left: 250px;
+}
+
+.sidebar-header img {
+    width: 24px;
+    height: 24px;
+}
+
+.card img {
+    width: 64px;
+    height: 64px;
+}
+
+#dropdown {
+    width: 400px;
+    text-align: center;
+}
+
+.jscss {
+    background-color: lightgray;
+}
+
+.jscss:hover {
+    background-color: rgb(143, 143, 143);
+}

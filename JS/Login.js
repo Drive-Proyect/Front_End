@@ -32,9 +32,12 @@ async function login(event) {
         const responseData = await valor.json(); 
 
         localStorage.setItem('token', responseData.token);
+        localStorage.setItem('userId', responseData.userId);
+        localStorage.setItem('userName', responseData.userName);
+        localStorage.setItem('email', responseData.email);
 
         showModal('Te has iniciado sesión correctamente!');
-        window.location.href = 'Register.html';
+        window.location.href = '../Index.html';
     } catch (error) {
         showModal(error.message);
         console.error('Error:', error);
