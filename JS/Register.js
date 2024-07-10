@@ -12,7 +12,7 @@ function register(event) {
         email: email.value
     };
 
-    fetch("http://localhost:5009/api/Users/Create", {
+    fetch("http://minidriv2.somee.com/api/Users/Create", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

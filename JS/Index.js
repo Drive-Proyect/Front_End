@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('email').innerText = email;
 
     // Fetch folders from the backend
-    fetch(`http://localhost:5009/api/folders/${userId}`)
+    fetch(`http://minidriv2.somee.com/api/folders/${userId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error fetching folders');
@@ -76,7 +76,7 @@ document.getElementById('createFolderForm').addEventListener('submit', async fun
     };
 
     try {
-        const response = await fetch("http://localhost:5009/api/Folders/Create", {
+        const response = await fetch("http://minidriv2.somee.com/api/Users/Create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

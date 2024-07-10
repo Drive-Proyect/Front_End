@@ -8,7 +8,7 @@
 // const cors = require('cors');
 // Assuming you have an axios instance named 'axios'
 function logout() {
-  fetch('http://localhost:5009/api/logout', {
+  fetch('http://minidriv2.somee.com/api/logout', {
     method: 'POST',     
     headers: {
       'Authorization': 'Bearer ' + localStorage.getItem('token')

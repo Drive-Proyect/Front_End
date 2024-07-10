@@ -15,7 +15,7 @@ async function login(event) {
     console.log(data);
 
     try {
-        const valor = await fetch("http://localhost:5009/api/login", {
+        const valor = await fetch("http://minidriv2.somee.com/api/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
