@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const userId = localStorage.getItem('userId'); // Asegúrate de tener el userId almacenado en localStorage
+    const userId = localStorage.getItem('userId'); 
     const username = localStorage.getItem('userName');
     const email = localStorage.getItem('email');
 
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('email').innerText = email;
 
     // Fetch folders from the backend
-    fetch("http://localhost:5009/api/folders")
+    fetch(`http://localhost:5009/api/folders/${userId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error fetching folders');
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <h5 style="font-size: 15px">
                                 <svg class="mb-1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
                                     <path fill="#000000" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h6l2 2h8q.825 0 1.413.588T22 8v10q0 .825-.587 1.413T20 20z"/>
-                                </svg> ${folder.Name}
+                                </svg> ${folder.name}
                             </h5>
                             <a style="cursor: pointer;">
                                 <svg class="mb-1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16">
@@ -90,7 +90,7 @@ document.getElementById('createFolderForm').addEventListener('submit', async fun
             throw new Error('Error al crear la carpeta: ' + errorText);
         }
 
-        showModal('Carpeta creada exitosamente!');
+        location.reload();
     } catch (error) {
         showModal(error.message);
         console.error('Error:', error);
